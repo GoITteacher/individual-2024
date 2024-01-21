@@ -9,13 +9,6 @@ body {
   margin: 0;
 }
 
-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 10px;
-  margin: 20px;
-}
-
 table,
 th,
 td {
@@ -96,6 +89,9 @@ li {
   height: 80vh;
   overflow-y: auto;
   justify-content: start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 ::-webkit-scrollbar {
@@ -132,24 +128,18 @@ input:focus {
   outline: none;
 }
 
-.task {
-  width: 400px;
+.item {
+  width: 200px;
   border: 1px solid rgb(49, 49, 49);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.task-desc {
-  height: 150px;
-  overflow-y: auto;
-}
-
-.low {
-  border: 2px solid rgb(68, 163, 68);
-}
-
-.middle {
-  border: 2px solid rgb(172, 168, 68);
-}
-
-.hight {
-  border: 2px solid rgb(163, 68, 68);
+.item img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  margin: 20px;
 }

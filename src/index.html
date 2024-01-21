@@ -15,71 +15,92 @@
     <title>EXAMPLE</title>
   </head>
   <body>
-    <div class="js-form-container fb fb-h">
-      <form class="form box js-form">
+    <div class="js-form-container fb fb-v" style="width: 100vw">
+      <form class="form box js-form fb">
         <input
           class="js-input form-control"
           name="input-value"
-          placeholder="Title"
+          placeholder="Img1"
         />
-        <input class="js-input form-control" name="image" placeholder="Image" />
-        <textarea
-          class="form-control"
-          name="description"
-          rows="10"
-          placeholder="Description"
-        ></textarea>
-        <div class="fb">
-          <input type="radio" name="priority" value="hight" checked />Hight
-          <input type="radio" name="priority" value="middle" />Middle
-          <input type="radio" name="priority" value="low" />Low
-        </div>
-
-        <button class="form-control" type="submit">Create Task</button>
+        <input
+          class="js-input form-control"
+          name="input-value"
+          placeholder="Img2"
+        />
+        <input
+          class="js-input form-control"
+          name="input-value"
+          placeholder="Tags"
+        />
+        <button class="form-control" type="submit">Add Image</button>
       </form>
 
-      <div class="box" style="width: fit-content">
-        <ul class="js-tasks list">
-          <li class="box task hight">
-            <h3>Title</h3>
-            <h5>Priority - HIGHT</h5>
-            <div class="fb">
-              <p class="task-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-                et accusamus reiciendis, dolorem sint doloremque ad deleniti
-                nulla aliquid maiores explicabo perspiciatis officiis optio quo
-                cumque, eligendi eum ea aliquam?
-              </p>
-              <img
-                src="https://blog.logrocket.com/wp-content/uploads/2023/01/css-full-page-background.png"
-                alt=""
-              />
-            </div>
-
-            <button class="form-control" data-type="show">SHOW MORE</button>
+      <div class="box" style="width: 80vw">
+        <ul class="js-list list gallery">
+          <li class="box item">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGFq9L6hdybHJ9468BXJRbZ9fhDrNoNLoNL4xd6p3jOA&s"
+              alt=""
+            />
+            <button class="form-control" data-type="delete">DELETE</button>
+          </li>
+          <li class="box item">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGFq9L6hdybHJ9468BXJRbZ9fhDrNoNLoNL4xd6p3jOA&s"
+              alt=""
+            />
+            <button class="form-control" data-type="delete">DELETE</button>
+          </li>
+          <li class="box item">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGFq9L6hdybHJ9468BXJRbZ9fhDrNoNLoNL4xd6p3jOA&s"
+              alt=""
+            />
+            <button class="form-control" data-type="delete">DELETE</button>
+          </li>
+          <li class="box item">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGFq9L6hdybHJ9468BXJRbZ9fhDrNoNLoNL4xd6p3jOA&s"
+              alt=""
+            />
+            <button class="form-control" data-type="delete">DELETE</button>
+          </li>
+          <li class="box item">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGFq9L6hdybHJ9468BXJRbZ9fhDrNoNLoNL4xd6p3jOA&s"
+              alt=""
+            />
+            <button class="form-control" data-type="delete">DELETE</button>
+          </li>
+          <li class="box item">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGFq9L6hdybHJ9468BXJRbZ9fhDrNoNLoNL4xd6p3jOA&s"
+              alt=""
+            />
+            <button class="form-control" data-type="delete">DELETE</button>
+          </li>
+          <li class="box item">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGFq9L6hdybHJ9468BXJRbZ9fhDrNoNLoNL4xd6p3jOA&s"
+              alt=""
+            />
+            <button class="form-control" data-type="delete">DELETE</button>
+          </li>
+          <li class="box item">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGFq9L6hdybHJ9468BXJRbZ9fhDrNoNLoNL4xd6p3jOA&s"
+              alt=""
+            />
+            <button class="form-control" data-type="delete">DELETE</button>
+          </li>
+          <li class="box item">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGFq9L6hdybHJ9468BXJRbZ9fhDrNoNLoNL4xd6p3jOA&s"
+              alt=""
+            />
             <button class="form-control" data-type="delete">DELETE</button>
           </li>
         </ul>
-      </div>
-    </div>
-
-    <div class="backdrop">
-      <div class="modalka">
-        <h3>Title</h3>
-        <h5>Priority - HIGHT</h5>
-        <div class="fb">
-          <p class="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero et
-            accusamus reiciendis, dolorem sint doloremque ad deleniti nulla
-            aliquid maiores explicabo perspiciatis officiis optio quo cumque,
-            eligendi eum ea aliquam?
-          </p>
-          <img
-            src="https://blog.logrocket.com/wp-content/uploads/2023/01/css-full-page-background.png"
-            alt=""
-          />
-        </div>
-        <button class="form-control" data-type="delete">DELETE</button>
       </div>
     </div>
 
