@@ -10,7 +10,7 @@ function onFormSubmit(e) {
     title: formElem.elements.title.value,
     image:
       formElem.elements.image.value ||
-      "https://blog.logrocket.com/wp-content/uploads/2023/01/css-full-page-background.png",
+      "https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg",
     desk: formElem.elements.description.value,
     userPriority: formElem.elements.priority.value,
   };
