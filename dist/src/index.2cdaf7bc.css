@@ -1,0 +1,153 @@
+body {
+  justify-content: start;
+  align-items: flex-start;
+  width: 94vw;
+  height: 94vh;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  overflow-y: auto;
+}
+
+img {
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+}
+
+table, th, td {
+  border: 1px solid;
+}
+
+.active {
+  border: 5px solid tomato;
+}
+
+.image-list {
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  border: 1px solid #000;
+  border-radius: 15px;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 1px 3px #0003, 0 1px 1px #00000024, 0 2px 1px -1px #0000001f;
+}
+
+.fb {
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  display: flex;
+}
+
+.fb-v {
+  flex-direction: column;
+}
+
+.fb-h {
+  flex-direction: row;
+}
+
+.h100 {
+  max-width: 80vw;
+  overflow-y: auto;
+}
+
+.user-item {
+  cursor: pointer;
+  background-color: tomato;
+  border-radius: 15px;
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  overflow-y: hidden;
+}
+
+li {
+  list-style-type: none;
+}
+
+.album {
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  max-width: 300px;
+  margin: 20px;
+  padding: 10px;
+  overflow-x: hidden;
+}
+
+.list {
+  justify-content: start;
+  min-width: 20vw;
+  height: 80vh;
+  min-height: 80vh;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  background-color: #0000;
+  width: 7px;
+  scroll-padding: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff000027;
+  border-radius: 5px;
+  transition: all 2s linear;
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+.blur-up {
+  filter: blur(5px);
+  transition: filter .4s, -webkit-filter .4s;
+}
+
+.blur-up.lazyloaded {
+  filter: blur();
+}
+
+.form-control {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.task {
+  border: 1px solid #313131;
+  width: 400px;
+}
+
+.task-desc {
+  height: 150px;
+  overflow-y: auto;
+}
+
+.low {
+  border: 2px solid #44a344;
+}
+
+.middle {
+  border: 2px solid #aca844;
+}
+
+.hight {
+  border: 2px solid #a34444;
+}
+
+/*# sourceMappingURL=index.2cdaf7bc.css.map */
