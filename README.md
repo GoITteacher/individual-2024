@@ -3,8 +3,7 @@
 - lazyload
 - simplelightbox
 - uuid
-- lodash
-- Notiflix
+- simple-notify
 
 ---
 
