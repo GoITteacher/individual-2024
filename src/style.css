@@ -1,0 +1,145 @@
+body {
+  width: 94vw;
+  height: 94vh;
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  overflow-y: auto;
+  padding: 20px;
+  margin: 0;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+.active {
+  border: 5px solid tomato;
+}
+
+.image-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px;
+  border: 1px solid black;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+.fb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.fb-v {
+  flex-direction: column;
+}
+
+.fb-h {
+  flex-direction: row;
+}
+
+.h100 {
+  max-width: 80vw;
+  overflow-y: auto;
+}
+
+.user-item {
+  background-color: tomato;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  width: 300px;
+  overflow-y: hidden;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+.album {
+  padding: 10px;
+  background-color: rgb(224, 224, 224);
+  border-radius: 15px;
+  max-width: 300px;
+  overflow-x: hidden;
+  margin: 20px;
+}
+
+.list {
+  min-height: 80vh;
+  min-width: 20vw;
+  height: 80vh;
+  overflow-y: auto;
+  justify-content: start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: #0000;
+  scroll-padding: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ff000027;
+  border-radius: 5px;
+  transition: all 2s linear;
+}
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+.blur-up {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  transition: filter 400ms, -webkit-filter 400ms;
+}
+
+.blur-up.lazyloaded {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+
+.form-control {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.item {
+  width: 200px;
+  border: 1px solid rgb(49, 49, 49);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.item img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  margin: 20px;
+}
