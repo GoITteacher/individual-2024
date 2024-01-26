@@ -1,11 +1,11 @@
+# Module 8-9
+
 ## Library
 
 - lazyload
 - simplelightbox
 - uuid
 - simple-notify
-
----
 
 ## ТЗ
 
