@@ -1,0 +1,38 @@
+body.show-modal .backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+.backdrop {
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #0000004d;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100vw;
+  height: 100vh;
+  padding: 100px;
+  transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.modalka {
+  background-color: #fff;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 640px;
+  min-height: 320px;
+  padding: 24px;
+  transition: transform .2s ease-in-out;
+  transform: scale(1.1);
+  box-shadow: 0 1px 3px #0003, 0 1px 1px #00000024, 0 2px 1px -1px #0000001f;
+}
+
+/*# sourceMappingURL=index.ef55e004.css.map */
