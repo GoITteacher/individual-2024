@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "03.06",
   "scripts": {
-    "start": "npx parcel src/index.html",
+    "start": "vite",
+    "build": "vite build --base=/test/",
+    "preview": "vite preview",
     "push": "git add . ; git commit -m '123'; git push;"
   },
   "repository": {
@@ -17,7 +19,17 @@
     "url": "https://github.com/GoITteacher/Individual-lessons/issues"
   },
   "homepage": "https://github.com/GoITteacher/Individual-lessons#readme",
+  "devDependencies": {
+    "glob": "^8.1.0",
+    "vite": "^4.0.5"
+  },
   "dependencies": {
-    "parcel": "^2.9.3"
+    "axios": "^1.6.7",
+    "basiclightbox": "^5.0.4",
+    "izitoast": "^1.4.0",
+    "lodash": "^4.17.21",
+    "simplelightbox": "^2.14.2",
+    "vite-plugin-full-reload": "^1.0.5",
+    "vite-plugin-html-inject": "^1.0.1"
   }
 }
