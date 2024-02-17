@@ -4,17 +4,23 @@
   box-sizing: border-box;
 }
 
+.block {
+  margin: 50px 0;
+  padding: 10px;
+  max-width: 100vw;
+  width: 100vw;
+  overflow-x: auto;
+  border: 1px solid black;
+  min-height: 200px;
+  background-color: rgb(255, 255, 255);
+}
+
 body {
   font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.5;
   color: #2a2a2a;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  height: fit-content;
+  background-color: rgb(215, 215, 215);
 }
 
 img {
@@ -22,61 +28,43 @@ img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  object-fit: cover;
 }
 
-.news-card {
-  position: relative;
-  width: 500px;
-  height: 600px;
+.card {
+  padding: 15px;
+  width: 288px;
+}
+
+.card-text {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.card-img-top {
+  display: flex;
+  justify-content: center;
+}
+
+.search-form {
   padding: 10px;
 }
 
-.news-list {
-  margin: 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 90vw;
-  overflow-y: auto;
-  padding: 20px;
-  align-items: center;
-  justify-content: center;
+.card {
+  margin: 10px;
 }
 
-.news-list::-webkit-scrollbar {
-  width: 10px;
-}
-
-.news-list::-webkit-scrollbar-track {
-  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
-  background-color: #f9f9fd;
-  border-radius: 10px;
-}
-
-.news-list::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: linear-gradient(180deg, #00c6fb, #005bea);
-}
-
-.button {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.button.is-hidden {
-  display: none;
-}
-
-.button > .spinner.is-hidden {
-  display: none;
-}
-
-.header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.fb {
   width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.fb-v {
+  flex-direction: column;
+}
+
+header {
+  padding: 15px;
 }
