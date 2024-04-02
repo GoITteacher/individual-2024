@@ -210,8 +210,3 @@ console.log(`${doubleDigitHours}:${doubleDigitMinutes}`);
 ```
 
 ---
-
-## CodeWars
-
-- [Kata 1](https://www.codewars.com/kata/5a3fe3dde1ce0e8ed6000097)
-- [Kata 2](https://www.codewars.com/kata/5748838ce2fab90b86001b1a)
