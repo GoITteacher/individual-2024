@@ -56,6 +56,64 @@ console.log(!"");
 
 const isOnline = true;
 const isNotOnline = !isOnline;
+
+console.log(true && false);
+console.log(false && true);
+console.log(true && true);
+console.log(false && false);
+
+console.log(true || false);
+console.log(false || true);
+console.log(true || true);
+console.log(false || false);
+
+console.log(!true);
+console.log(!false);
+console.log(!!true);
+console.log(!!false);
+
+console.log(1 === 1 && 2 === 2);
+console.log(1 === 2 && 2 === 2);
+console.log(1 === 1 || 2 === 2);
+console.log(1 === 2 || 2 === 2);
+
+console.log(1 > 2 && 2 < 3);
+console.log(1 < 2 && 2 < 3);
+console.log(1 > 2 || 2 < 3);
+console.log(1 < 2 || 2 < 3);
+
+console.log(0 && 3);
+console.log(3 && 0);
+console.log(0 || 3);
+console.log(3 || 0);
+
+console.log("" || "apple");
+console.log("orange" || "");
+console.log("" && "banana");
+console.log("grape" && "");
+
+console.log(0 || false);
+console.log(false || 0);
+console.log(1 && "cherry");
+console.log("banana" && 1);
+console.log(null && "pear");
+console.log("peach" && undefined);
+console.log(undefined || "plum");
+console.log("melon" || null);
+console.log(undefined && false);
+console.log(true || "watermelon");
+console.log("watermelon" || true);
+console.log(false && "pineapple");
+console.log("pineapple" && false);
+console.log(NaN || "kiwi");
+console.log("kiwi" || NaN);
+console.log(NaN && "mango");
+console.log("mango" && NaN);
+console.log(Infinity || "apricot");
+console.log("apricot" || Infinity);
+console.log(Infinity && "blueberry");
+console.log("blueberry" && Infinity);
+console.log(null || undefined);
 ```
 
 ---
