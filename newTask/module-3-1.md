@@ -35,6 +35,14 @@
 1. Напиши функцію, яка приймає массив чисел і повертає новий массив, де елементи відсортовані в порядку збільшення або зменшення.
 1. Напиши функцію, яка приймає массив рядочків та їх за довжиною елементів.
 
+## Codewars
+
+- [Kata #1](https://www.codewars.com/kata/57a083a57cb1f31db7000028)
+- [Kata #1](https://www.codewars.com/kata/64fbfe2618692c2018ebbddb)
+- [Kata #1](https://www.codewars.com/kata/64fbfe2618692c2018ebbddb)
+- [Kata #1](https://www.codewars.com/kata/57f222ce69e09c3630000212)
+- [Kata #1](https://www.codewars.com/kata/53dc23c68a0c93699800041d)
+
 - [Kata #1](https://www.codewars.com/kata/57ea5b0b75ae11d1e800006c)
 - [Kata #2](https://www.codewars.com/kata/563cf89eb4747c5fb100001b)
 - [Kata #3](https://www.codewars.com/kata/5813d19765d81c592200001a)

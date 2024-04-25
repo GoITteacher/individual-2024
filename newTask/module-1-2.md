@@ -93,10 +93,8 @@ console.log(value);
 
 ## CodeWars
 
-1. [Kata](https://www.codewars.com/kata/5748838ce2fab90b86001b1a)
 1. [Kata](https://www.codewars.com/kata/55fab1ffda3e2e44f00000c6)
-1. [Kata](https://www.codewars.com/kata/55f9b48403f6b87a7c0000bd/train/javascript)
+1. [Kata](https://www.codewars.com/kata/5748838ce2fab90b86001b1a)
 1. [Kata](https://www.codewars.com/kata/55f9bca8ecaa9eac7100004a)
 1. [Kata](https://www.codewars.com/kata/55a5befdf16499bffb00007b/train/javascript)
-1. [Kata](https://www.codewars.com/kata/5708f682c69b48047b000e07)
 1. [Kata](https://www.codewars.com/kata/5bb0c58f484fcd170700063d)

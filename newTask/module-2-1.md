@@ -300,13 +300,6 @@ const min = 20;
 
 ## Codewars
 
+1. [Kata](https://www.codewars.com/kata/5672a98bdbdd995fad00000f)
 1. [Kata](https://www.codewars.com/kata/5a3fe3dde1ce0e8ed6000097)
-1. [Kata]()
-1. [Kata]()
-1. [Kata]()
-1. [Kata]()
-1. [Kata]()
-1. [Kata]()
-1. [Kata]()
-1. [Kata]()
-1. [Kata]()
+1. [Kata](https://www.codewars.com/kata/55f9b48403f6b87a7c0000bd/train/javascript)
