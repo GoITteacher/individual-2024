@@ -6,7 +6,7 @@
     "start": "vite",
     "build": "vite build --base=/test/",
     "preview": "vite preview",
-    "push": "git add . ; git commit -m '123'; git push;"
+    "push": "git add . ; git commit -m 'update'; git push;"
   },
   "repository": {
     "type": "git",
