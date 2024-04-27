@@ -48,16 +48,6 @@
 ```
 
 ```
-Задача-10
-Напишіть функцію, яка приймає параметр arr (масив чисел). Функція повинна повернути булеве значення true, якщо всі числа в масиві є позитивними. В іншому випадку функція повинна повернути булеве значення false.
-```
-
-```
-Задача-11
-Напишіть функцію, яка приймає число num. Функція повинна повернути булеве значення true, якщо num є простим числом. В іншому випадку функція повинна повернути булеве значення false.
-```
-
-```
 Задача-12
 Напишіть функцію, яка приймає рядок str. Функція повинна повернути булеве значення true, якщо str містить хоча б один пробіл. В іншому випадку функція повинна повернути булеве значення false.
 ```
@@ -172,29 +162,29 @@ const value = 27.5;
 ```js
 console.log(5 > 4);
 
-console.log(10 >= "7");
+console.log(10 >= '7');
 
-console.log("2" > "12");
+console.log('2' > '12');
 
-console.log("2" < "12");
+console.log('2' < '12');
 
-console.log("4" == 4);
+console.log('4' == 4);
 
-console.log("6" === 6);
+console.log('6' === 6);
 
-console.log("false" === false);
+console.log('false' === false);
 
 console.log(1 == true);
 
 console.log(1 === true);
 
-console.log("0" == false);
+console.log('0' == false);
 
-console.log("0" === false);
+console.log('0' === false);
 
-console.log("Papaya" < "papaya");
+console.log('Papaya' < 'papaya');
 
-console.log("Papaya" === "papaya");
+console.log('Papaya' === 'papaya');
 
 console.log(undefined == null);
 
@@ -205,8 +195,8 @@ console.log(undefined === null);
 
 ## Task 3
 
-Напиши скрипт який переведе значення `totalMinutes` (кількість хвилин)
-рядок у форматі годин та хвилин `HH:MM`.
+Напиши скрипт який переведе значення `totalMinutes` (кількість хвилин) рядок у
+форматі годин та хвилин `HH:MM`.
 
 - 70 покаже 01:10
 - 450 покаже 07:30
@@ -229,11 +219,11 @@ console.log(`${doubleDigitHours}:${doubleDigitMinutes}`);
 
 ## Task 4
 
-Отрефактори код так, щоб у змінну `value` присвоювалося значення
-змінної `incomingValue`, якщо воно не дорівнює `undefined` або `null`. У
-в іншому випадку має надаватися значення `defaultValue`. Перевір роботу
-скрипта для сліпучих значень змінної `incomingValue`: null, undefined, 0,
-false. Використовуй оператор "?" (nullish coalescing operator).
+Отрефактори код так, щоб у змінну `value` присвоювалося значення змінної
+`incomingValue`, якщо воно не дорівнює `undefined` або `null`. У в іншому
+випадку має надаватися значення `defaultValue`. Перевір роботу скрипта для
+сліпучих значень змінної `incomingValue`: null, undefined, 0, false.
+Використовуй оператор "?" (nullish coalescing operator).
 
 ```js
 const incomingValue = 5;
