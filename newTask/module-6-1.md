@@ -9,18 +9,18 @@
 ```js
 const chopShop = {
   stones: [
-    { name: "Emerald", price: 1300, quantity: 4 },
-    { name: "Diamond", price: 2700, quantity: 3 },
-    { name: "Sapphire", price: 1400, quantity: 7 },
-    { name: "Ruby", price: 800, quantity: 2 },
+    { name: 'Emerald', price: 1300, quantity: 4 },
+    { name: 'Diamond', price: 2700, quantity: 3 },
+    { name: 'Sapphire', price: 1400, quantity: 7 },
+    { name: 'Ruby', price: 800, quantity: 2 },
   ],
   calcTotalPrice(stoneName) {},
 };
 
-console.log(chopShop.calcTotalPrice("Emerald")); // 5200
-console.log(chopShop.calcTotalPrice("Diamond")); // 8100
-console.log(chopShop.calcTotalPrice("Sapphire")); // 9800
-console.log(chopShop.calcTotalPrice("Ruby")); // 1600
+console.log(chopShop.calcTotalPrice('Emerald')); // 5200
+console.log(chopShop.calcTotalPrice('Diamond')); // 8100
+console.log(chopShop.calcTotalPrice('Sapphire')); // 9800
+console.log(chopShop.calcTotalPrice('Ruby')); // 1600
 ```
 
 ## Example 2 - Телефонна книга
@@ -32,7 +32,7 @@ const phonebook = {
   contacts: [],
   add(contact) {},
   generateId() {
-    return "_" + Math.random().toString(36).substr(2, 9);
+    return '_' + Math.random().toString(36).substr(2, 9);
   },
   getDate() {
     return Date.now();
@@ -41,16 +41,16 @@ const phonebook = {
 
 console.log(
   phonebook.add({
-    name: "Mango",
-    email: "mango@mail.com",
-    list: "friends",
-  })
+    name: 'Mango',
+    email: 'mango@mail.com',
+    list: 'friends',
+  }),
 );
 console.log(
   phonebook.add({
-    name: "Poly",
-    email: "poly@hotmail.com",
-  })
+    name: 'Poly',
+    email: 'poly@hotmail.com',
+  }),
 );
 ```
 
@@ -89,26 +89,28 @@ const calculator = {};
 ## Для Співбесіди
 
 ```js
-let user = {
-  firstName: "Вася",
-  showInfo: func,
-  age: 20,
-};
-
 function func() {
   console.log(this);
 }
+
+let user = {
+  firstName: 'Вася',
+  showInfo: func,
+  age: 20,
+};
 
 user.showInfo();
 
 // =========================================
 
+// =========================================
+
 const obj2 = {
-  name: "awdawd",
+  name: 'awdawd',
 };
 
 let obj1 = {
-  name: "obj1",
+  name: 'obj1',
   func() {
     return () => {
       console.log(this);
@@ -140,11 +142,11 @@ foo();
 // =========================================
 
 const obj1 = {
-  name: "obj1",
+  name: 'obj1',
 };
 
 let obj2 = {
-  name: "obj2",
+  name: 'obj2',
   func() {
     function foo() {
       console.log(this);
@@ -173,7 +175,7 @@ obj.test();
 // =========================================
 
 let elem = {
-  value: "123",
+  value: '123',
 };
 
 function func(a, b) {
@@ -188,14 +190,14 @@ func.call(elem);
 // =========================================
 
 const user = {
-  name: "Vasya",
+  name: 'Vasya',
   showName() {
-    console.log(this.name.toUpperCase().trim().replace(" ", "-"));
+    console.log(this.name.toUpperCase().trim().replace(' ', '-'));
   },
 };
 
 const user1 = {
-  name: "Petro",
+  name: 'Petro',
 };
 
 user.showName.call(user1);
