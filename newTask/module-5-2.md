@@ -2,16 +2,15 @@
 
 # CARS
 
-1. Знайти авто зеленого кольору
+1. Знайти авто заданого кольору
 1. Знайти усі спорткари
-1. Порахувати кількість авто 2022 року
-1. Знайти всі машини з ціною вище 30000.
-1. Знайти всі машини червоного кольору.
-1. Порахувати кількість машин 2022 року.
+1. Порахувати кількість авто заданого року
+1. Знайти всі машини з ціною вище вказаної.
+1. Порахувати кількість машин вказаного року.
 1. Відсортувати машини за роком випуску (від найстарішого до найновішого).
 1. Знайти найдорожчу машину.
 1. Знайти всі машини заданої марки (наприклад, Toyota).
-1. Порахувати загальну кількість машин усіх типів.
+1. Порахувати загальну кількість машин.
 1. Відсортувати машини за ціною (від найдешевшої до найдорожчої).
 1. Знайти всі машини певного типу (наприклад, SUV).
 1. Знайти всі машини певного кольору та року випуску.
@@ -24,7 +23,10 @@
 1. Порахувати загальну вартість всіх машин складі.
 1. Знайти всі машини певного типу та кольору.
 1. Відсортувати машини за брендом та моделлю в алфавітному порядку.
-1. Перевірити, чи є хоч одна машина зеленого кольору.
+1. Перевірити, чи є хоч одна машина певного кольору.
+1. Перевірити, чи є хоч одна машина певного року.
+1. Перевірити, чи є всі авто є спроткарами.
+1. Перевірити, чи є всі новіші за вказаний рік.
 1. Створити новий масив, що містить лише назви моделей усіх машин.
 1. Створити масив, що містить розмітку кожної машини.
 1. Знайти індекс першої машини з роком випуску 2022 року.
@@ -34,8 +36,7 @@
 
 1. Знайти всі машини з ціною вище 50000 і відсортувати їх за роком випуску від
    нових до старих.
-1. Перевірити, чи всі машини на складі доступні для продажу та створити новий
-   масив, що містить лише моделі доступних машин.
+1. Створити новий масив, що містить лише моделі доступних для продажу машин.
 1. Знайти першу машину, яка не є спортивною та має кількість на на складі більше
    0, потім повернути її колір.
 1. Порахувати загальну вартість всіх машин з кількістю на складі більше 2 і
@@ -43,16 +44,14 @@
 1. Знайти всі машини певного типу (наприклад, SUV), відсортувати їх за роком
    випуску від старих до нових і повернути масив тільки зі своїми моделями.
 1. Знайти всі спортивні машини з ціною вище 60000, відсортувати їх за спаданням
-   ціни і повернути масив, що містить лише бренди цих машин.
+   ціни і повернути масив, що містить лише бренди та моделі цих машин.
 1. Знайти всі машини заданого кольору (наприклад, "Blue") та року випуску після
    2020, відсортувати їх за зростанням ціни та повернути масив, що містить лише
-   моделі цих машин.
-1. Перевірити, чи всі машини заданої марки доступні для продажу та повернути
-   масив, що містить лише кольори доступних машин.
+   моделі цих машин та ціну.
+1. Повернути масив, що містить лише кольори доступних для прродажу машин, та
+   зробити щоб колір не повторювався дівчі.
 1. Знайти індекс першої машини з ціною менше 20000 та повернути масив, що
    містить тільки бренди та моделі машин після знайденої.
-1. Порахувати сумарну кількість машин заданого кольору та повернути новий масив,
-   містить об'єкти з квітами та відповідними кількостями машин.
 1. Знайти всі машини з ціною між 40000 та 60000, відсортувати їх за роком
    випуску від нових до старих і повернути масив, що містить тільки моделі цих
    машин.
@@ -160,7 +159,7 @@ const cars = [
     year: 2021,
     color: 'Gray',
     price: 45000,
-    amount: 4,
+    amount: 0,
     isSportCar: false,
     type: 'Sedan',
   },
@@ -220,7 +219,7 @@ const cars = [
     year: 2022,
     color: 'Orange',
     price: 35000,
-    amount: 2,
+    amount: 0,
     isSportCar: false,
     type: 'SUV',
   },
@@ -290,7 +289,7 @@ const cars = [
     year: 2022,
     color: 'Gray',
     price: 60000,
-    amount: 1,
+    amount: 0,
     isSportCar: false,
     type: 'SUV',
   },
@@ -301,7 +300,7 @@ const users = [
     firstName: 'Alice',
     lastName: 'Johnson',
     age: 28,
-    email: 'alice@example.com',
+    email: 'alice@gmail.com',
     isActive: true,
     gender: 'Female',
   },
@@ -325,7 +324,7 @@ const users = [
     firstName: 'David',
     lastName: 'Brown',
     age: 22,
-    email: 'david@example.com',
+    email: 'david@gmail.com',
     isActive: true,
     gender: 'Male',
   },
@@ -333,7 +332,7 @@ const users = [
     firstName: 'Sophia',
     lastName: 'Davis',
     age: 29,
-    email: 'sophia@example.com',
+    email: 'sophia@gmail.com',
     isActive: false,
     gender: 'Female',
   },
@@ -349,7 +348,7 @@ const users = [
     firstName: 'Olivia',
     lastName: 'Wilson',
     age: 19,
-    email: 'olivia@example.com',
+    email: 'olivia@gmail.com',
     isActive: true,
     gender: 'Female',
   },
@@ -365,7 +364,7 @@ const users = [
     firstName: 'Ava',
     lastName: 'Harris',
     age: 27,
-    email: 'ava@example.com',
+    email: 'ava@gmail.com',
     isActive: true,
     gender: 'Female',
   },
@@ -389,7 +388,7 @@ const users = [
     firstName: 'William',
     lastName: 'Anderson',
     age: 45,
-    email: 'william@example.com',
+    email: 'william@gmail.com',
     isActive: true,
     gender: 'Male',
   },
@@ -397,7 +396,7 @@ const users = [
     firstName: 'Mia',
     lastName: 'Martin',
     age: 29,
-    email: 'mia@example.com',
+    email: 'mia@poshta.com',
     isActive: true,
     gender: 'Female',
   },
@@ -405,7 +404,7 @@ const users = [
     firstName: 'Joseph',
     lastName: 'Clark',
     age: 33,
-    email: 'joseph@example.com',
+    email: 'joseph@poshta.com',
     isActive: false,
     gender: 'Male',
   },
@@ -413,7 +412,7 @@ const users = [
     firstName: 'Charlotte',
     lastName: 'Rodriguez',
     age: 26,
-    email: 'charlotte@example.com',
+    email: 'charlotte@poshta.com',
     isActive: true,
     gender: 'Female',
   },
@@ -469,7 +468,7 @@ const users = [
     firstName: 'James',
     lastName: 'Jones',
     age: 29,
-    email: 'james@example.com',
+    email: 'james@poshta.com',
     isActive: true,
     gender: 'Male',
   },
@@ -485,7 +484,7 @@ const users = [
     firstName: 'William',
     lastName: 'Wilson',
     age: 52,
-    email: 'william@example.com',
+    email: 'william@poshta.com',
     isActive: false,
     gender: 'Male',
   },
@@ -509,7 +508,7 @@ const users = [
     firstName: 'Emma',
     lastName: 'Lee',
     age: 27,
-    email: 'emma@example.com',
+    email: 'emma@poshta.com',
     isActive: false,
     gender: 'Female',
   },
@@ -525,7 +524,7 @@ const users = [
     firstName: 'Isabella',
     lastName: 'Hernandez',
     age: 42,
-    email: 'isabella@example.com',
+    email: 'isabella@poshta.com',
     isActive: false,
     gender: 'Female',
   },
@@ -541,7 +540,7 @@ const users = [
     firstName: 'Mia',
     lastName: 'Rodriguez',
     age: 30,
-    email: 'mia@example.com',
+    email: 'mia@poshta.com',
     isActive: true,
     gender: 'Female',
   },
@@ -573,7 +572,7 @@ const users = [
     firstName: 'Amelia',
     lastName: 'White',
     age: 23,
-    email: 'amelia@example.com',
+    email: 'amelia@poshta.com',
     isActive: true,
     gender: 'Female',
   },
