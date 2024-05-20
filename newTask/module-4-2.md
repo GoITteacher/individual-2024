@@ -88,18 +88,18 @@
 
 ## Example 1 - Масив об'єктів
 
-Напишіть ф-цію `calcTotalPrice(stones, stoneName)`, яка приймає масив
-об'єктів та рядок з назвою каменю. Ф-ція вважає та повертає загальну вартість
-каміння з таким ім'ям, ціною та кількістю з об'єкта
+Напишіть ф-цію `calcTotalPrice(stones, stoneName)`, яка приймає масив об'єктів
+та рядок з назвою каменю. Ф-ція вважає та повертає загальну вартість каміння з
+таким ім'ям, ціною та кількістю з об'єкта
 
 ### Код
 
 ```js
 const stones = [
-  { name: "Смарагд", price: 1300, quantity: 4 },
-  { name: "Діамант", price: 2700, quantity: 3 },
-  { name: "Сапфір", price: 400, quantity: 7 },
-  { name: "Щебінь", price: 200, quantity: 2 },
+  { name: 'Смарагд', price: 1300, quantity: 4 },
+  { name: 'Діамант', price: 2700, quantity: 3 },
+  { name: 'Сапфір', price: 400, quantity: 7 },
+  { name: 'Щебінь', price: 200, quantity: 2 },
 ];
 ```
 
@@ -115,8 +115,8 @@ const stones = [
  * Можна покласти чи зняти гроші з рахунку.
  */
 const Transaction = {
-  DEPOSIT: "deposit",
-  WITHDRAW: "withdraw",
+  DEPOSIT: 'deposit',
+  WITHDRAW: 'withdraw',
 };
 
 /*
