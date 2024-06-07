@@ -132,12 +132,12 @@ input:focus {
   outline: none;
 }
 
-.task {
+.item {
   width: 400px;
   border: 1px solid rgb(49, 49, 49);
 }
 
-.task-desc {
+.item-desc {
   height: 150px;
   overflow-y: auto;
 }
