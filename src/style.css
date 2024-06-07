@@ -154,3 +154,7 @@ input:focus {
 .active-item {
   border: 1px solid red;
 }
+
+li.disabled {
+  opacity: 0.3;
+}
