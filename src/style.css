@@ -67,16 +67,6 @@ td {
   overflow-y: auto;
 }
 
-.user-item {
-  background-color: tomato;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 15px;
-  width: 300px;
-  overflow-y: hidden;
-  cursor: pointer;
-}
-
 li {
   list-style-type: none;
 }
@@ -133,6 +123,11 @@ input:focus {
 }
 
 .item {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  overflow-y: hidden;
+  cursor: pointer;
   width: 400px;
   border: 1px solid rgb(49, 49, 49);
 }
@@ -152,4 +147,10 @@ input:focus {
 
 .hight {
   border: 2px solid rgb(163, 68, 68);
+}
+
+/*----------------------------*/
+
+.active-item {
+  border: 1px solid red;
 }
