@@ -14,7 +14,7 @@
 1. `git branch "branchName"` - створює гілку з назвою "branchName"
 1. `git diff` - показує відрізки рядків між двома версіями файлу (між двома
    комітами)
-1. `git checkout -b "branchName"` - творюємо гілку з назвою "branchName" і
+1. `git checkout -b "branchName"` - cтворюємо гілку з назвою "branchName" і
    переходимо на неї
 1. `git checkout "branchName"` - переходить на гілку з назвою "branchName"
 1. `git clone ...` - Клонує існуючий репозиторій GIT на локальну машину.
