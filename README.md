@@ -23,6 +23,10 @@
    IdentitiesOnly yes
    ```
 1. Add SSH to GITHub repo:
+
    - open repo
    - settings->access->SSH
    - Click New SSH key or Add SSH key
+
+1. git config --global user.name "Имя"
+1. git config --global user.email "email.email@gmail.com"
