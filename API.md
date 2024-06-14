@@ -2,6 +2,10 @@
 
 ## [LIST api](https://github.com/public-apis/public-apis?tab=readme-ov-file):
 
+1. [Emogu](https://random.dog/woof.json)
+1. [Dog](https://random.dog/woof.json)
+1. [Cat](https://placekitten.com/)
+1. [Rick and Morty](https://rickandmortyapi.com/documentation/#character)
 1. [HERO](https://rapidapi.com/jakash1997/api/superhero-search/)
 1. [QUOTES](https://rapidapi.com/martin.svoboda/api/quotes15/)
 1. [TRANSlATE1](https://rapidapi.com/lebedev.str/api/just-translated/)
