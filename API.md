@@ -2,7 +2,7 @@
 
 ## [LIST api](https://github.com/public-apis/public-apis?tab=readme-ov-file):
 
-1. [Emogu](https://random.dog/woof.json)
+1. [Emogu](https://github.com/cheatsnake/emojihub)
 1. [Dog](https://random.dog/woof.json)
 1. [Cat](https://placekitten.com/)
 1. [Rick and Morty](https://rickandmortyapi.com/documentation/#character)
