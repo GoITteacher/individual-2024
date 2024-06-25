@@ -1,3 +1,15 @@
 # individual-2024
 
-https://code.mu/ru/javascript/tasker/stager/1/1/
+- SPA
+- components
+- props
+- children
+- useState
+- virtualDom
+- useEffect
+  - mounting
+  - unmounting
+  - update
+- useMemo
+- useRef
+- myHooks
