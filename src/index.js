@@ -39,22 +39,64 @@
 // muImage.remove()
 
 
-const muul2 = document.querySelector('.js-list-2');
-muul2.classList.add("listItems") 
+// const muul2 = document.querySelector('.js-list-2');
+// muul2.classList.add("listItems") 
 
-const muUl1 = document.querySelector('.js-list-1');
-muUl1.classList.add("low")
+// const muUl1 = document.querySelector('.js-list-1');
+// muUl1.classList.add("low")
 
 
 const muBox = document.querySelector('.js-tasks');
+const taskHtml = `<ul class="js-tasks list">
+          <li class="box task hight">
+            <h3>Title</h3>
+            <h5>Priority - HIGHT</h5>
+            <div class="fb">
+              <p class="task-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+                et accusamus reiciendis, dolorem sint doloremque ad deleniti
+                nulla aliquid maiores explicabo perspiciatis officiis optio quo
+                cumque, eligendi eum ea aliquam?
+              </p>
+              <img
+                src="https://blog.logrocket.com/wp-content/uploads/2023/01/css-full-page-background.png"
+                alt=""
+              />`
 
-function gethello(name){
-    return `<h1>Hello ${name}</h1>`
-}
-const str = gethello("Max");
-muBox.insertAdjacentHTML('beforeend', str);
+muBox.innerHTML = taskHtml;
+muBox.insertAdjacentHTML('beforebegin', taskHtml);
+muBox.insertAdjacentHTML('afterend', taskHtml);
+const newLi = document.createElement('li');
 
-muBox.insertAdjacentHTML('afterbegin', gethello("Bohdan"));
+newLi.classList.add('box', 'task', 'hight');
+newLi.innerHTML = `
+  <h3>Title</h3>
+  <h5>Priority - HIGHT</h5>
+  <div class="fb">
+    <p class="task-desc">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+    <img src="https://blog.logrocket.com/wp-content/uploads/2023/01/css-full-page-background.png" alt=""/>
+  </div>
+`;
+muBox.appendChild(newLi);
+
+// const newTitle = document.querySelector('h3');
+// newTitle.textContent = "Good day";
+
+const titleAll = document.querySelectorAll('h3');
+titleAll.forEach(title => {
+  title.textContent = "Good day";
+});
+
+
+// function gethello(name){
+//     return `<h1>Hello ${name}</h1>`
+// }
+// const str = gethello("Max");
+// muBox.insertAdjacentHTML('beforeend', str);
+
+// muBox.insertAdjacentHTML('afterbegin', gethello("Bohdan"));
 
 /*
 -textContent
@@ -68,3 +110,8 @@ muBox.insertAdjacentHTML('afterbegin', gethello("Bohdan"));
 -querySelecor()
 -quearySelectorAll()
 */                                            
+
+
+
+
+
