@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Search</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <p><a href="index.html">Go back</a></p>
+    <div class="container">
+      <form action="submit" class="js-create-form car-search">
+        <div class="car-group">
+          <input
+            type="text"
+            name="title"
+            class="car-input"
+            placeholder="Title"
+          />
+        </div>
+        <div class="car-group">
+          <input
+            type="number"
+            name="price"
+            class="car-input"
+            placeholder="Price"
+          />
+        </div>
+        <div class="car-group">
+          <input type="text" name="img" class="car-input" placeholder="Image" />
+        </div>
+
+        <div class="car-group container">
+          <label for="onSale">On Sale</label>
+          <input
+            type="checkbox"
+            name="onSale"
+            class="car-input"
+            placeholder="Title"
+          />
+        </div>
+
+        <div class="car-group">
+          <div>
+            <input type="radio" name="type" value="supercar" />
+            <label for="type">Supercar</label>
+          </div>
+          <div>
+            <input type="radio" name="type" value="suv" />
+            <label for="type">SUV</label>
+          </div>
+          <div>
+            <input type="radio" name="type" value="sedan" />
+            <label for="type">Sedan</label>
+          </div>
+        </div>
+        <button class="car-button">Create</button>
+      </form>
+
+      <form action="submit" class="js-form car-search">
+        <div class="car-group">
+          <input
+            type="text"
+            name="query"
+            class="car-input"
+            placeholder="Пошук"
+          />
+        </div>
+        <div class="car-group">
+          <div>
+            <input type="radio" name="type" value="supercar" />
+            <label for="type">Supercar</label>
+          </div>
+          <div>
+            <input type="radio" name="type" value="suv" />
+            <label for="type">SUV</label>
+          </div>
+          <div>
+            <input type="radio" name="type" value="sedan" />
+            <label for="type">Sedan</label>
+          </div>
+          <div>
+            <input type="radio" name="type" value="all" checked />
+            <label for="type">All Type</label>
+          </div>
+        </div>
+        <button class="car-button">Пошук</button>
+      </form>
+    </div>
+
+    <ul class="js-list car-list">
+      <li class="car-item">
+        <img src="https://picsum.photos/720?random=1" alt="" />
+        <div class="car-info">
+          <h3>Test Title</h3>
+          <p>Type: sport</p>
+          <p>Price: 1000$</p>
+        </div>
+      </li>
+      <li class="car-item on-sale">
+        <img src="https://picsum.photos/720?random=1" alt="" />
+        <div class="car-info">
+          <h3>Test Title</h3>
+          <p>Type: sport</p>
+          <p>Price: 1000$</p>
+        </div>
+      </li>
+      <li class="car-item">
+        <img src="https://picsum.photos/720?random=1" alt="" />
+        <div class="car-info">
+          <h3>Test Title</h3>
+          <p>Type: sport</p>
+          <p>Price: 1000$</p>
+        </div>
+      </li>
+      <li class="car-item on-sale">
+        <img src="https://picsum.photos/720?random=1" alt="" />
+        <div class="car-info">
+          <h3>Test Title</h3>
+          <p>Type: sport</p>
+          <p>Price: 1000$</p>
+        </div>
+      </li>
+    </ul>
+
+    <script src="./js/06-practice.js"></script>
+  </body>
+</html>
