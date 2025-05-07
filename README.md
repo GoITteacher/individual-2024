@@ -12,3 +12,13 @@
 1. Повісити слухача для відкриття модального вікна
 1. Написати функцію відкриття модального вікна
 1. Написати функцію закриття модального вікна
+
+## Перелік бібліотек для використання
+
+- https://revealjs.com/
+- https://www.chartjs.org/
+- https://www.npmjs.com/package/izitoast
+- https://www.npmjs.com/package/lazysizes
+- https://www.npmjs.com/package/lodash
+- https://www.npmjs.com/package/basiclightbox
+- https://www.npmjs.com/package/simplelightbox
