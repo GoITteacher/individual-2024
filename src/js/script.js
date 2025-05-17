@@ -1,10 +1,12 @@
-import './modules/binance';
-import './modules/hero';
-import './modules/quotes';
-import './modules/ipfinder';
-import './modules/pokemon';
-import './modules/instagram';
-import './modules/user';
+import "./modules/hero";
+import "./modules/task1";
+import "./modules/task2";
+import "./modules/task3";
+import "./modules/task4";
+import "./modules/task5";
+import "./modules/task6";
+import "./modules/task7";
+import "./modules/task8";
 
 // ====================================
 

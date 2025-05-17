@@ -2,6 +2,14 @@
 
 ## [LIST api](https://github.com/public-apis/public-apis?tab=readme-ov-file):
 
+1. [Books](https://books-backend.p.goit.global/api-docs/)
+1. [Events](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
+1. [Emogu](https://developer.nytimes.com/apis)
+1. [Drinks](https://drinkify.b.goit.study/api-docs/)
+1. [Tasty Treats](https://tasty-treats-backend.p.goit.global/api-docs/)
+1. [Food](https://food-boutique.b.goit.study/api-docs/)
+1. [Marvel](https://developer.marvel.com/)
+1. [Rick and Morty](https://rickandmortyapi.com/documentation)
 1. [Emogu](https://github.com/cheatsnake/emojihub)
 1. [Dog](https://random.dog/woof.json)
 1. [Cat](https://placekitten.com/)

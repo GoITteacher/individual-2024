@@ -15,8 +15,16 @@
   background-color: rgb(255, 255, 255);
 }
 
+section.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
 body {
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.5;
   color: #2a2a2a;
@@ -45,10 +53,6 @@ img {
   justify-content: center;
 }
 
-.search-form {
-  padding: 10px;
-}
-
 .card {
   margin: 10px;
 }
@@ -67,4 +71,25 @@ img {
 
 header {
   padding: 15px;
+}
+
+.list {
+  list-style-type: none;
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  gap: 10px;
+}
+
+form {
+  max-width: fit-content;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.search-form {
+  padding: 10px;
 }

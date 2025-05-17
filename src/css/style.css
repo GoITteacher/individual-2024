@@ -1,13 +1,13 @@
-@import url('./common.css');
-@import url('./binance.css');
-@import url('./hero.css');
-@import url('./inst.css');
-@import url('./ipgeo.css');
-@import url('./quotes.css');
-@import url('./translate.css');
-@import url('./youtube.css');
-@import url('./user.css');
-@import url('./pokemon.css');
+@import url("./common.css");
+@import url("./hero.css");
+@import url("./task1.css");
+@import url("./task2.css");
+@import url("./task3.css");
+@import url("./task4.css");
+@import url("./task5.css");
+@import url("./task6.css");
+@import url("./task7.css");
+@import url("./task8.css");
 
 * {
   box-sizing: border-box !important;
