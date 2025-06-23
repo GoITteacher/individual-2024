@@ -5,7 +5,7 @@
 ---
 
 1. Generate SSH Key: `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
-1. Copy to clipboard: `pbcopy < ~/.ssh/id_ed25519.pub` or `clip < ~/.ssh/id_ed25519.pub`
+1. Copy to clipboard: `pbcopy < ~/.ssh/id_rsa.pub` or `clip < ~/.ssh/id_rsa.pub`
 1. Add SSH to GITHub repo:
    - open repo
    - settings->access->SSH
