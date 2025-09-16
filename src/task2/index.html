@@ -17,26 +17,53 @@
   <body>
     <div class="js-form-container fb fb-h">
       <form class="form box js-form">
-        <input type="text" class="form-control" />
-        <input type="text" class="form-control" />
-        <input type="text" class="form-control" />
-        <input type="text" class="form-control" />
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          class="form-control"
+        />
+        <input
+          type="text"
+          name="surname"
+          placeholder="Surname"
+          class="form-control"
+        />
+        <input
+          type="number"
+          name="age"
+          placeholder="Age"
+          class="form-control"
+        />
+        <input
+          type="text"
+          name="gender"
+          placeholder="Gender"
+          class="form-control"
+        />
+        <input
+          type="phone"
+          name="phone-number"
+          placeholder="Phone-number"
+          class="form-control"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Mail"
+          class="form-control"
+        />
 
         <button class="form-control" type="submit">Create item</button>
       </form>
 
       <div class="box" style="width: fit-content">
-        <ul class="js-items list">
-          <li class="box item hight">
-            <button class="form-control" data-type="show">SHOW MORE</button>
-            <button class="form-control" data-type="delete">DELETE</button>
-          </li>
-        </ul>
+        <input type="text" class="js-filters" />
+        <ul class="js-items list"></ul>
       </div>
     </div>
-
-    <div class="backdrop">
-      <div class="modalka"></div>
+    <div class="backdrop hidden js-backdrop">
+      <div class="modalka js-modal"></div>
     </div>
 
     <script type="module" src="./index.js"></script>

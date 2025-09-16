@@ -17,26 +17,24 @@
   <body>
     <div class="js-form-container fb fb-h">
       <form class="form box js-form">
-        <input type="text" class="form-control" />
-        <input type="text" class="form-control" />
-        <input type="text" class="form-control" />
-        <input type="text" class="form-control" />
+        <input
+          type="name"
+          name="name"
+          placeholder="name"
+          class="form-control"
+        />
+        <input type="color" name="color" class="form-control" />
 
         <button class="form-control" type="submit">Create item</button>
       </form>
 
       <div class="box" style="width: fit-content">
-        <ul class="js-items list">
-          <li class="box item hight">
-            <button class="form-control" data-type="show">SHOW MORE</button>
-            <button class="form-control" data-type="delete">DELETE</button>
-          </li>
-        </ul>
+        <ul class="js-items list"></ul>
       </div>
     </div>
 
-    <div class="backdrop">
-      <div class="modalka"></div>
+    <div class="backdrop hidden js-backdrop">
+      <div class="modalka js-modal"></div>
     </div>
 
     <script type="module" src="./index.js"></script>
