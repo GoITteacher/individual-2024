@@ -63,7 +63,7 @@ ref.list.addEventListener("click", e => {
     const createElems = modalTemplate(userSearch);
     ref.modalka.innerHTML = createElems;
     openModal();
-    
+
 
 })
 
