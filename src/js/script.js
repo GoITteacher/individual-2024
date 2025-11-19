@@ -1,4 +1,4 @@
-import "./modules/hero";
+// import "./modules/hero";
 import "./modules/task1";
 import "./modules/task2";
 import "./modules/task3";
