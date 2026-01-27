@@ -2,10 +2,84 @@
 
 // ## Задачі
 
+// const str = 'Hello';
+
+// str.length;
+// str.toUpperCase();
+// str.toLowerCase();
+// str.includes(); // true | false;
+// str.slice(5, 10);
+// str.slice(-3, -1); // ll
+// str.indexOf('e'); // 1
+// str.startsWith('!'); // false
+// str.endsWith('.'); // false
+//!=========================================
+
+// const str1 = 'Hello';
+// const x = 2;
+// const y = 5;
+
+// console.log(str1[y - x]); //'l'
+
+//!=========================================
+
+// + - = * / % **
+// let x = 15;
+
+// x += 10
+// x = x + 10
+
+// console.log(x);// 25
+
+// +=
+// -=
+// /=
+// *=
+// %=
+// **=
+
+//!=========================================
+
+// && || !
+// === !== !=  == >= <= > <;
+
+// Boolean(25) -> true
+// Boolean(-10) -> true
+// Boolean('Hello') -> true
+// Boolean('false') -> true
+// Boolean('null') -> true
+// Boolean(0) -> false
+// Boolean('') -> false
+// Boolean(null) -> false
+// Boolean(undefined) -> false
+
+// && - шукає перше false або повертає останнє значення
+// 'false' && 'hello';
+
+// || - шукає перше true або повертає останнє значення
+
+// 0 || null || undefined || 'awdawdawd' || true;
+
+//!=========================================
 // ```
 // Задача-1
 // Напишіть функцію яка приймає два параметри str1 та str2. Функція повинна повернути булеве значення true якщо перша літера str1 дорівнює останій літері str2. В іншому випадку функція повинна повернути булеве значення false.
 // ```
+//!=========================================
+
+// function foo(age, username, lastname, city) {
+
+// }
+
+// foo(10, 'Vasya', 'Petronko');
+// foo(20, 'Roman');
+
+// function sum(x, y, q) {
+//   console.log(x + y + q);
+// }
+
+// sum(10, 20);
+//!=========================================
 
 // ```
 // Задача-2
