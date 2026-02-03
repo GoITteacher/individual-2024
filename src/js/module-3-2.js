@@ -47,19 +47,107 @@
 
 // 1. Напиши функцію, яка приймає рядок і повертає true,
 //     якщо рядок є паліндромом, або false — якщо ні.
+
 // 2. Напиши функцію, яка приймає рядок і повертає новий рядок,
 //     у якому всі голосні літери (a, e, i, o, u) замінені на "*".
+'hello';
+
+function task2(str) {
+  let res = '';
+  const vowels = 'aeiou';
+
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i])) {
+      res += '*';
+    } else {
+      res += str[i];
+    }
+  }
+
+  return res;
+}
+
 // 3. Напиши функцію, яка приймає рядок і повертає кількість слів,
 //     довжина яких більша за 3 символи.
+
+// 'Hello world test hi bye js css html'
+
+function task3(str) {
+  const arr = str.split(' ');
+  const res = [];
+
+  for (const item of arr) {
+    if (item.length > 3) {
+      res.push(item);
+    }
+  }
+
+  return res.length;
+}
+
+function task3(str) {
+  const arr = str.split(' ');
+  let res = 0;
+
+  for (const item of arr) {
+    if (item.length > 3) {
+      res += 1;
+    }
+  }
+
+  return res;
+}
+
 // 4. Напиши функцію, яка приймає два числа (start, end) і повертає суму
 //     всіх чисел між ними (включно).
+function task4(start, end) {
+  let sum = 0;
+
+  for (let i = start; i <= end; i++) {
+    sum += i;
+  }
+
+  return sum;
+}
 // 5. Напиши функцію, яка приймає число і повертає true,
 //     якщо це просте число, або false — якщо ні.
 // 6. Напиши функцію, яка приймає рядок і повертає новий рядок,
 //     у якому кожне слово починається з великої літери.
+
+// 'Hello world'
+// function task6(str) {
+//   const arr = str.split(' ');
+//   let res = [];
+
+//   for (const elem of arr) {
+//     const word = elem[0].toUpperCase() + elem.slice(1);
+//     res.push(word);
+//   }
+
+//   return res.join(' ');
+// }
+
 // 7. Напиши функцію, яка приймає рядок і повертає кількість цифр у ньому.
+
+// 'H2O'
+
+function tas7(str) {
+  let sum = 0;
+
+  for (const item of str) {
+    const num = Number(item);
+    const isNum = !Number.isNaN(num);
+
+    if (isNum) {
+      sum += 1;
+    }
+  }
+
+  return sum;
+}
 // 8. Напиши функцію, яка приймає два числа і повертає true,
 //     якщо одне число є дільником іншого.
+
 // 9. Напиши функцію, яка приймає рядок і повертає true,
 //     якщо у рядку однакова кількість відкриваючих і закриваючих дужок "()"
 //     (без перевірки порядку).
