@@ -8,30 +8,86 @@
 // `[firstName] [lastName]`. Також додай метод `incrementAge`, який збільшує вік
 // на 1.
 
-// ---
+//!=========================================
 
+// const obj1 = {
+//   firstname: 'test',
+//   lastname: 'test',
+//   age: 25,
+
+//   getFullName() {
+//     return `${this.firstname} ${this.lastname}`;
+//   },
+
+//   incrementAge() {
+//     this.age += 1;
+//   },
+// };
+
+// obj1.incrementAge();
+// obj1.getFullName();
+// obj1.age;
+
+//!=========================================
+
+//!=========================================
 // **2. Завдання:**
 // Створи об'єкт із властивостями `bankName` (рядок), `accountNumber` (число) та
 // `balance` (число). Додай метод `deposit`, який приймає суму як аргумент і додає
 // її до балансу, а також метод `withdraw`, який приймає суму і зменшує баланс,
 // якщо сума не перевищує наявний баланс. Метод має повертати новий баланс.
 
-// ---
+const objR = {
+  bankName: 'Mono',
+  accountNumber: 123,
+  balance: 0,
+  deposit(sum) {
+    this.balance = sum;
+  },
+  withdraw(num) {
+    if (num <= this.balance) {
+      this.balance -= num;
+    }
+    return this.balance;
+  },
+};
+
+//!=========================================
 
 // **3. Завдання:**
 // Створи об'єкт з властивостями `width` (число), `height` (число). Додай метод
 // `calculateArea`, який повертає площу прямокутника, та метод
 // `calculatePerimeter`, який повертає периметр.
 
-// ---
+const obj = {
+  width: 120,
+  height: 50,
+  calculateArea() {
+    return this.width * this.height;
+  },
+  calculatePerimeter() {
+    return (this.width + this.height) * 2;
+  },
+};
+
+//!=========================================
 
 // **4. Завдання:**
 // Створи об'єкт із властивостями `name` (рядок), `position` (рядок) та `salary`
 // (число). Додай метод `getInfo`, який повертає рядок у форматі:
 // `[name] працює на позиції [position] із зарплатою [salary]`.
 
-// ---
+const obj5 = {
+  name: '',
+  position: '',
+  salary: 0,
 
+  getInfo() {
+    return `${this.name} працює на позиції ${this.position} із зарплатою ${this.salary}`;
+  },
+};
+
+//!=========================================
 // **5. Завдання:**
 // Створи об'єкт із властивостями `countryName` (рядок), `capital` (рядок) та
 // `population` (число). Додай метод `getDetails`, який повертає рядок у форматі:
@@ -50,8 +106,19 @@
 // Створи об'єкт із властивостями `email` (рядок) та `password` (рядок). Додай
 // метод `checkLogin`, який приймає два аргументи (email і password) і повертає
 // `true`, якщо вони збігаються зі значеннями об'єкта.
+// const objK = {
+//   email: 'petro@gmail.com',
+//   password: '1234567',
 
-// ---
+//   checkLogin(email, password) {
+//     const isValidEmail = email === this.email;
+//     const isValidPassword = password === this.password;
+//     return isValidEmail && isValidPassword;
+//   },
+// };
+// objK.checkLogin('test', 'test');
+
+//!=========================================
 
 // **8. Завдання:**
 // Створи об'єкт із властивостями `temperature` (число) та `unit` (рядок, що
@@ -59,7 +126,24 @@
 // переводить температуру з Фаренгейта в Цельсій, якщо `unit` дорівнює `"F"`, та
 // метод `convertToFahrenheit`, який робить зворотнє перетворення.
 
-// ---
+const obj6 = {
+  temperature: 32,
+  unit: 'F',
+  convertToCelsius() {
+    if (this.unit === 'F') {
+      this.temperature = ((this.temperature - 32) * 5) / 9;
+      this.unit = 'F';
+    }
+    return this.temperature;
+  },
+  convertToFahrenheit() {
+    if (this.unit === 'C') {
+      this.temperature = (this.temperature * 9) / 5 + 32;
+      this.unit = 'F';
+    }
+    return this.temperature;
+  },
+};
 
 // **9. Завдання:**
 // Створи об'єкт із властивостями `vehicleType` (рядок), `fuelType` (рядок) та
