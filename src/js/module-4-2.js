@@ -515,3 +515,106 @@ const obj6 = {
 // const result = new A();
 // result.getThis();
 // ```
+
+//!=========================================
+
+// Task5
+// Створіть об'єкт libraryCatalog, який зберігатиме список книг у бібліотеці та надаватиме методи для додавання нових книг, пошуку книг за автором та ISBN, а також виведення списку всіх книг.
+
+/* 
+const book = {
+  author: '',
+  ISBN: '123123',
+  title: 'awdawd',
+  pages: 123,
+  price: ''
+}
+*/
+
+const libraryCatalog = {
+  books: [],
+
+  // addBook(title, isbn, author, price, pages) {
+  //   const book = { title, isbn, author, price, pages };
+  //   this.books.push(book);
+  // },
+
+  addBook(bookObj) {
+    this.books.push(bookObj);
+  },
+
+  findBook(author, isbn) {
+    const book = this.books.find(
+      el => el.author === author && el.ISBN === isbn,
+    );
+  },
+
+  showBooks() {
+    for (const book of this.books) {
+      if (book.rating > 8) {
+        const str = `${book.title} - ${book.author} (Bestseller)`;
+        console.log(str);
+      } else {
+        const str = `${book.title} - ${book.author}`;
+        console.log(str);
+      }
+    }
+  },
+
+  countBooks() {},
+  findCopy() {},
+};
+
+libraryCatalog.addBook({
+  author: 'Test1',
+  ISBN: 'awdawgrsg',
+  title: 'awdawd',
+  pages: 123,
+  price: '',
+  rating: 3,
+});
+libraryCatalog.addBook({
+  author: 'Test2',
+  ISBN: 'rgtrhfdtrgsfe',
+  title: 'awdawdf',
+  pages: 123,
+  price: '',
+  rating: 5,
+});
+libraryCatalog.addBook({
+  author: 'Test3',
+  ISBN: 'aweawdsefsef',
+  title: 'awdawdda',
+  pages: 123,
+  price: '',
+  rating: 10,
+});
+
+console.log(libraryCatalog.books);
+console.log(libraryCatalog.findBook('Test1', 'aweawdsefsef'));
+libraryCatalog.showBooks();
+//!=========================================
+
+// Task9
+// Створіть об'єкт musicPlayer, який зберігатиме список пісень та надаватиме методи для додавання нових пісень, відтворення, паузи та перемикання між піснями.
+
+// const musicPlayer = {
+//   songs: [],
+//   currentSong: 0,
+//   addSong(song) {
+//     this.songs.push(song);
+//   },
+
+//   play() {
+//     console.log(`Зараз грає ${this.songs[this.currentSong]}`);
+//   },
+
+//   nextSong() {
+//     this.currentSong += 1;
+//     this.play();
+//   },
+
+//   remove(removeTitleSong) {
+//     this.songs = this.songs.filter(el => el !== removeTitleSong);
+//   },
+// };
