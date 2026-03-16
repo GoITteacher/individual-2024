@@ -2,7 +2,7 @@
 // import "./modules/task1";
 // import "./modules/task2";
 // import "./modules/task3";
-// import "./modules/task4";
+import "./modules/task4";
 import "./modules/task5";
 import "./modules/task6";
 import "./modules/task7";
