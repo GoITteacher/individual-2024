@@ -24,8 +24,16 @@ section.block {
 }
 
 body {
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family:
+    "Open Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
   line-height: 1.5;
   color: #2a2a2a;
   background-color: rgb(215, 215, 215);
@@ -92,4 +100,8 @@ form {
 
 .search-form {
   padding: 10px;
+}
+
+.hidden {
+  display: none;
 }

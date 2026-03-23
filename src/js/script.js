@@ -7,6 +7,9 @@ import "./modules/task5";
 import "./modules/task6";
 import "./modules/task7";
 import "./modules/task8";
+import "./modules/task9";
+import "./modules/task10";
+import "./modules/task11";
 
 // ====================================
 
