@@ -1,13 +1,20 @@
 import axios from "axios";
+import type {
+  CreateStudentBody,
+  GetStudentsResponse,
+  Student,
+} from "../types/students";
 
-const formElem = document.querySelector(".js-student-form");
+const formElem = document.querySelector(".js-student-form") as HTMLFormElement;
 
-const elemList = document.querySelector(".js-student-ul");
+const elemList = document.querySelector(".js-student-ul") as HTMLUListElement;
 
-const formCreate = document.querySelector(".js-create-student-form");
+const formCreate = document.querySelector(
+  ".js-create-student-form",
+) as HTMLFormElement;
 
 //!=========================================
-async function getStudent(lastname) {
+async function getStudent(lastname: string) {
   const baseUrl = "https://q10gsl5s9d.execute-api.us-east-1.amazonaws.com";
   const endPoint = "/public/students";
   const url = baseUrl + endPoint;
@@ -17,7 +24,7 @@ async function getStudent(lastname) {
     perPage: 150,
   };
 
-  const res = await axios.get(url, { params });
+  const res = await axios.get<GetStudentsResponse>(url, { params });
   return res.data;
 }
 
@@ -25,7 +32,7 @@ formElem.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const borys = new FormData(formElem);
-  const lastName = borys.get("lastname");
+  const lastName = borys.get("lastname") as string;
 
   const res = await getStudent(lastName);
   console.log(res);
@@ -36,7 +43,7 @@ formElem.addEventListener("submit", async (e) => {
 
 //!=========================================
 
-async function createStudent(student) {
+async function createStudent(student: CreateStudentBody) {
   const baseUrl = "https://q10gsl5s9d.execute-api.us-east-1.amazonaws.com";
   const endPoint = "/public/students";
   const url = baseUrl + endPoint;
@@ -50,12 +57,12 @@ formCreate.addEventListener("submit", async (e) => {
 
   const borys = new FormData(formCreate);
 
-  const res = {
-    firstName: borys.get("firstName"),
-    lastName: borys.get("lastName"),
-    major: borys.get("major"),
-    cohortYear: +borys.get("cohortYear"),
-    gpa: +borys.get("gpa"),
+  const res: CreateStudentBody = {
+    firstName: borys.get("firstName") as string,
+    lastName: borys.get("lastName") as string,
+    major: borys.get("major") as string,
+    cohortYear: Number(borys.get("cohortYear")),
+    gpa: Number(borys.get("gpa")),
     enrolled: Boolean(borys.get("enrolled")),
   };
 
@@ -65,10 +72,10 @@ formCreate.addEventListener("submit", async (e) => {
 });
 
 //!=========================================
-function itemStudent(item) {
+function itemStudent(item: Student) {
   return `<div>${item.firstName} ${item.lastName}</div>`;
 }
 
-function itemsStudents(items) {
+function itemsStudents(items: Student[]) {
   return items.map(itemStudent).join("");
 }

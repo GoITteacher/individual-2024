@@ -6,7 +6,7 @@ const songCreateForm = document.querySelector(".js-create-songs-form");
 const songList = document.querySelector(".js-songs-list");
 
 //!=========================================
-async function getData(title) {
+async function getData(title:string) {
   const baseUrl = "https://q10gsl5s9d.execute-api.us-east-1.amazonaws.com";
   const endPoint = "/public/songs";
   const url = baseUrl + endPoint;
@@ -15,15 +15,16 @@ async function getData(title) {
     title,
   };
 
-  const res = await axios.get(url, { params });
+  const res = await axios.get<>(url, { params });
   return res.data;
 }
-async function deleteSong(songId) {
+
+async function deleteSong(songId:string) {
   const baseUrl = "https://q10gsl5s9d.execute-api.us-east-1.amazonaws.com";
   const endPoint = `/public/songs/${songId}`;
   const url = baseUrl + endPoint;
 
-  const res = await axios.delete(url);
+  const res = await axios.delete<>(url);
   return res.data;
 }
 
@@ -37,9 +38,9 @@ async function createSong(song) {
 }
 
 async function updateSong(id, song) {
-  const baseUrl = "https://q10gsl5s9d.execute-api.us-east-1.amazonaws.com";
-  const endPoint = `/public/songs/${id}`;
-  const url = baseUrl + endPoint;
+  const baseUrl:string = "https://q10gsl5s9d.execute-api.us-east-1.amazonaws.com";
+  const endPoint:string = `/public/songs/${id}`;
+  const url:string = baseUrl + endPoint;
 
   const res = await axios.put(url, song);
   return res.data.item;
