@@ -1,105 +1,237 @@
-# SSH Connection
+# S3 bucket connection
 
-## Connect to EC2 Instance
+### Provider
 
-1. `chmod 400 "first-aws-instance.pem"`
-1. `ssh -i "first-aws-instance.pem" ec2-user@ec2-54-83-69-41.compute-1.amazonaws.com`
-
-## Install dependencies
-
-1. `sudo dnf update -y`
-1. ```
-   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-   source ~/.bashrc
-   nvm install --lts
-   ```
-1. ```
-   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-   source ~/.bashrc
-   nvm install --lts
-   ```
-1. `sudo dnf install -y git`
-1. `npm install -g pm2`
-1. ```
-   sudo dnf install -y nginx
-   sudo systemctl enable nginx
-   sudo systemctl start nginx
-   ```
-
-## Install NGINX
-
-1. Перевір, що порт 80 відкрито
-
-1. У Security Group EC2 додай правило:
-
-   - Type: HTTP
-   - Port: 80
-   - Source: 0.0.0.0/0
-
-1. Аналогічно відкрий порт 443 (HTTPS).
-
-1. `sudo dnf install -y certbot python3-certbot-nginx`
-
-1. Прив’яжи домен до свого EC2. Для сертифікату потрібен домен (не працює для IP):
-
-   - Вибери домен (наприклад, yourdomain.com)
-   - Створи A-запис у DNS, який вказує на '00.00.00.00.00' (твій EC2 IP)
-
-1. `sudo nano /etc/nginx/conf.d/yourdomain.com.conf`
-
-1. Вставити налаштування
-
-```
-server {
-    listen 80;
-    server_name yourdomain.com www.yourdomain.com;
-
-    location / {
-        proxy_pass http://localhost:3000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
-    }
-}
+```yml
+provider:
+name: aws
+runtime: nodejs20.x
+timeout: 30
+environment:
+    VAR1: ${env:VAR1, "DEFAULT VAR1"}
+    IMAGES_BUCKET_NAME: ${self:service}-${sls:stage}-images
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+        - s3:GetObject
+      Resource:
+        - arn:aws:s3:::${self:service}-${sls:stage}-images - arn:aws:s3:::${self:service}-${sls:stage}-images/\*
 ```
 
-1. `sudo systemctl restart nginx`
+### Resources
 
-1. `sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com`
+```yml
+resources:
+  Resources:
+    ImagesBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:service}-${sls:stage}-images
 
-1. ```
-      sudo crontab -e
-      0 3 \* \* \* /usr/bin/certbot renew --quiet
-   ```
+        PublicAccessBlockConfiguration:
+          BlockPublicAcls: false
+          IgnorePublicAcls: false
+          BlockPublicPolicy: false
+          RestrictPublicBuckets: false
 
-## Create GITHUB Connection with SSH
+    ImagesBucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket:
+          Ref: ImagesBucket
+        PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Sid: PublicRead
+              Effect: Allow
+              Principal: "*"
+              Action:
+                - s3:GetObject
+              Resource:
+                - arn:aws:s3:::${self:service}-${sls:stage}-images/*
+```
 
-1. Generate SSH Key: `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
-1. Copy public key: `cat ~/.ssh/id_rsa.pub`
-   - Скопіюй вміст вручну з терміналу та встав у GitHub
-1. Add SSH to GITHub repo:
-   - open repo
-   - settings->access->SSH
-   - Click New SSH key or Add SSH key
+### Controller
+
+```js
+import AWS from "aws-sdk";
+const s3 = new AWS.S3({ signatureVersion: "v4" });
+
+export const createSignedUploadUrl = async ({ contentType }) => {
+  if (!contentType) {
+    const error = new Error("Missing contentType");
+    error.status = 400;
+    throw error;
+  }
+
+  const bucketName = process.env.IMAGES_BUCKET_NAME;
+  if (!bucketName) {
+    const error = new Error("Missing IMAGES_BUCKET_NAME");
+    error.status = 500;
+    throw error;
+  }
+
+  const key = crypto.randomBytes(8).toString("hex");
+  const uploadUrl = await s3.getSignedUrlPromise("putObject", {
+    Bucket: bucketName,
+    Key: key,
+    ContentType: contentType,
+    Expires: 60 * 5,
+  });
+
+  return {
+    uploadUrl,
+    key,
+  };
+};
+```
+
+# S3 Bucket Connection
+
+## 1. Install dependencies
+
+```bash
+npm install @aws-sdk/client-s3 @aws-sdk/s3-request-presigner
+```
+
+## 2. Configure `serverless.yml`
+
+### Provider
+
+The `provider` section configures the Lambda runtime, environment variables, and IAM permissions.
+
+```yml
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: eu-central-1
+  timeout: 30
+
+  environment:
+    VAR1: ${env:VAR1, "DEFAULT VAR1"}
+    IMAGES_BUCKET_NAME: ${self:service}-${sls:stage}-images
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+        - s3:GetObject
+      Resource:
+        - arn:aws:s3:::${self:service}-${sls:stage}-images
+        - arn:aws:s3:::${self:service}-${sls:stage}-images/*
+```
+
+Explanation:
+
+- `region` – AWS region where resources will be created.
+- `IMAGES_BUCKET_NAME` – bucket name available in Lambda through `process.env`.
+- `s3:PutObject` – allows uploading files.
+- `s3:GetObject` – allows reading files.
+- First ARN references the bucket itself.
+- Second ARN references every object inside the bucket.
 
 ---
 
-## Deploy application code
+### Resources
 
-1. `git clone https://github.com/<your-repo>.git`
-1. `cd <your-repo>`
-1. `npm ci` # або `npm install`, якщо lock‑файлу немає
-1. Створи файл `.env` із необхідними змінними середовища (PORT, DB_URI тощо).
+Creates the S3 bucket and makes uploaded files publicly readable.
 
-## Run application with PM2 (автоматичний рестарт)
+```yml
+resources:
+  Resources:
+    ImagesBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:service}-${sls:stage}-images
 
-1. `pm2 start index.js --name my-app`  # заміни `index.js` на точку входу програми
-1. `pm2 save`   # зберегти поточний список процесів
-1. `pm2 startup systemd -u ec2-user --hp /home/ec2-user`
-   - Виконай команду, яку виведе термінал (із `sudo`), щоб додати сервіс до автозавантаження.
-1. Перегляд логів: `pm2 logs my-app`
-1. (Опційно) автоматичне управління логами: `pm2 install pm2-logrotate`
+        PublicAccessBlockConfiguration:
+          BlockPublicAcls: false
+          IgnorePublicAcls: false
+          BlockPublicPolicy: false
+          RestrictPublicBuckets: false
 
-> **PM2** автоматично перезапускає процес при падінні та відновлює його після перезавантаження EC2 завдяки поєднанню `pm2 save` + `pm2 startup`.
+    ImagesBucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket:
+          Ref: ImagesBucket
+        PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Sid: PublicRead
+              Effect: Allow
+              Principal: "*"
+              Action:
+                - s3:GetObject
+              Resource:
+                - arn:aws:s3:::${self:service}-${sls:stage}-images/*
+```
+
+Explanation:
+
+- `ImagesBucket` creates the bucket.
+- `PublicAccessBlockConfiguration` allows bucket policies to grant public access.
+- `ImagesBucketPolicy` allows everyone to download objects.
+- Uploading is still allowed only through the Lambda IAM role.
+
+---
+
+## 3. Generate a Presigned Upload URL
+
+```js
+import crypto from "node:crypto";
+import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+
+const s3 = new S3Client({
+  region: process.env.AWS_REGION,
+});
+
+export const createSignedUploadUrl = async ({ contentType }) => {
+  if (!contentType) {
+    const error = new Error("Missing contentType");
+    error.status = 400;
+    throw error;
+  }
+
+  const bucketName = process.env.IMAGES_BUCKET_NAME;
+
+  if (!bucketName) {
+    const error = new Error("Missing IMAGES_BUCKET_NAME");
+    error.status = 500;
+    throw error;
+  }
+
+  const key = crypto.randomUUID();
+
+  const command = new PutObjectCommand({
+    Bucket: bucketName,
+    Key: key,
+    ContentType: contentType,
+  });
+
+  const uploadUrl = await getSignedUrl(s3, command, {
+    expiresIn: 300,
+  });
+
+  return {
+    uploadUrl,
+    key,
+  };
+};
+```
+
+## 4. Upload file from the client
+
+```ts
+await fetch(uploadUrl, {
+  method: "PUT",
+  headers: {
+    "Content-Type": file.type,
+  },
+  body: file,
+});
+```
+
+After a successful upload, store the returned `key` (or build a public URL if the bucket is public). Do not store the `uploadUrl`, because it expires after a few minutes.
