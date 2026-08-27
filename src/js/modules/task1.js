@@ -1,36 +1,39 @@
-//!======================================================
+import { getSongs } from "../../services/songs";
 
-function fetchCoctails(coctailName) {
-  const BASE_URL = "https://drinkify.b.goit.study/api/v1";
-  const END_POINT = "/cocktails/search/";
-  const params = new URLSearchParams({
-    s: coctailName,
-  });
+const songsForm = document.querySelector(".js-songs-form");
+const ulElem = document.querySelector(".js-songs-list");
+const loader = document.querySelector(".js-loader");
 
-  const url = `${BASE_URL}${END_POINT}?${params}`;
-
-  return fetch(url).then((res) => res.json());
-}
-
-//!======================================================
-
-function coctailTemplate(coctail) {
-  return "<li></li>";
-}
-function coctailsTemplate(arr) {
-  return arr.map(coctailTemplate).join("");
-}
-
-//!======================================================
-
-form.addEventListener("submit", (e) => {
+songsForm.addEventListener("submit", async (e) => {
   e.preventDefault();
+  showLoading();
 
-  const formData = new FormData(form);
-  const title = formData.get("title");
+  const borys = new FormData(songsForm);
+  const title = borys.get("title");
+  const artist = borys.get("artist");
 
-  fetchCoctails(title).then((arr) => {
-    const markup = coctailsTemplate(arr);
-    listelem.innerHTML = markup;
-  });
+  const res = await getSongs(title, artist);
+  const markup = itemsTemplate(res.items);
+  ulElem.innerHTML = markup;
+
+  hideLoading();
 });
+
+function itemTemplate(item) {
+  return `<li>
+          <p>${item.title} - ${item.artist}</p>
+          <p>${item.genre}</p>
+        </li>`;
+}
+
+function itemsTemplate(items) {
+  return items.map(itemTemplate).join("");
+}
+
+function showLoading() {
+  loader.classList.remove("hidden");
+}
+
+function hideLoading() {
+  loader.classList.add("hidden");
+}

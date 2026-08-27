@@ -85,8 +85,10 @@ header {
   list-style-type: none;
   display: flex;
   padding: 10px;
-  margin: 10px;
+  margin: 10px auto;
   gap: 10px;
+  width: 80vw;
+  flex-wrap: wrap;
 }
 
 form {
@@ -104,4 +106,11 @@ form {
 
 .hidden {
   display: none;
+}
+
+li {
+  list-style-type: none;
+  border: 1px solid teal;
+  border-radius: 5px;
+  padding: 10px;
 }
